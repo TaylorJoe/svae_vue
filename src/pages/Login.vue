@@ -78,8 +78,10 @@
                     axios
                         .post('user/login', params,config)
                         .then(response => {
+                            if (response.data.code==200) {
+                                console.log(response.data)
+                            }
                             alert(response.data.message)
-                            console.log(response.data)
                         })
                         .catch(error => {
                             console.log(error)
